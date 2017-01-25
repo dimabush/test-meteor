@@ -1,32 +1,22 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import {Template} from 'meteor/templating';
+// import { ReactiveVar } from 'meteor/reactive-var';
+import {Mongo} from 'meteor/mongo';
+
 
 import './main.html';
 
-Resolutions = new Mongo.Collection('resolutions');
+import {Tasks} from '/imports/api/Tasks.js';
 
 
-Template.body.helpers({
-  resolutions: function () {
-      return Resolutions.find();
-  }
-});
 
-Template.body.events({
-    'submit .new-resolution': function (event) {
-        let title = event.target.title.value;
-        Resolutions.insert({
-            title: title,
-            createdAt: new Date()
-        });
 
-        event.target.title.value = "";
 
-        return false;
-    }
-});
 
-/*Template.hello.onCreated(function helloOnCreated() {
+
+
+
+/*
+ Template.hello.onCreated(function helloOnCreated() {
  this.counter = new ReactiveVar(0);
  });
 

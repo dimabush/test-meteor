@@ -7,12 +7,20 @@
 <div class="container">
     <header>
         <h1>Monthly Resolutions</h1>
+
+        <!--<form class="new-task">-->
+            <!--<input type="text" name="text" placeholder="Type to add new tasks" />-->
+        <!--</form>-->
+
         <form class="new-resolution">
             <input type="text" name="title" placeholder="A new resolution">
             <input type="submit" value="Submit">
         </form>
     </header>
     <ul>
+        <li>
+            <h4>some xyjnia 2</h4>
+        </li>
         {{#each resolutions}}
             {{> resolution}}
         {{/each}}
@@ -22,6 +30,6 @@
 
 <template name="resolution">
     <li>
-        <h4>some xyjnia</h4>
+        <h4>{{title}}</h4>
     </li>
 </template>
